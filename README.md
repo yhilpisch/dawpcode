@@ -46,8 +46,8 @@ Some examples may reference third‑party libraries, datasets, services, or APIs
 
 ## Contact
 
-- Email: `team@tpq.io`
-- Linktree: `linktr.ee/dyjh`
-- CPF Program: `python-for-finance.com`
-- The AI Engineer: `theaiengineer.dev`
-- The Crypto Engineer: `thecryptoengineer.dev`
+- Email: [team@tpq.io](mailto:team@tpq.io)
+- Linktree: [linktr.ee/dyjh](https://linktr.ee/dyjh)
+- CPF Program: [python-for-finance.com](https://python-for-finance.com)
+- The AI Engineer: [theaiengineer.dev](https://theaiengineer.dev)
+- The Crypto Engineer: [thecryptoengineer.dev](https://thecryptoengineer.dev)
