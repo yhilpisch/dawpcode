@@ -1,5 +1,9 @@
 # Notebooks Overview
 
+<p align="right">
+  <img src="https://hilpisch.com/tpq_logo_bic.png" alt="The Python Quants" width="20%">
+</p>
+
 This folder contains the chapter notebooks for *Derivatives Analytics with Python*. Each notebook mirrors the structure of a chapter and focuses on a small, coherent set of ideas.
 
 ## Chapter Notebooks
@@ -17,4 +21,3 @@ This folder contains the chapter notebooks for *Derivatives Analytics with Pytho
 - `dawp_chapter_13.ipynb` — dynamic delta hedging: hedging experiments in BSM and calibrated BCC dynamics and interpretation of hedging error distributions.
 
 To get started, open a notebook in your preferred Jupyter environment or in Google Colab, run the cells from top to bottom, and compare the results with the corresponding chapters and slide decks.
-

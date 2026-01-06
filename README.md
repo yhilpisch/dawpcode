@@ -1,5 +1,9 @@
 # Derivatives Analytics with Python — Code & Notebooks
 
+<p align="right">
+  <img src="https://hilpisch.com/tpq_logo_bic.png" alt="The Python Quants" width="25%">
+</p>
+
 This repository contains the Jupyter notebooks and Python scripts that accompany the *Derivatives Analytics with Python* book and class in the CPF Program. The material is organised to mirror the book structure:
 
 - Part I — The Market
@@ -7,6 +11,14 @@ This repository contains the Jupyter notebooks and Python scripts that accompany
 - Part III — Market-Based Valuation
 
 The notebooks reproduce the main valuation, calibration, and hedging examples used in class, while the scripts provide focused, reusable implementations for figures and numerical experiments.
+
+## Book
+
+The material follows the structure of the book *Derivatives Analytics with Python* by Dr. Yves J. Hilpisch.
+
+<p align="center">
+  <img src="https://hilpisch.com/dawp_cover.png" alt="Derivatives Analytics with Python cover" width="30%">
+</p>
 
 ## Structure
 
