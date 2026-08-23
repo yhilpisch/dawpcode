@@ -29,7 +29,8 @@ def bsm_call_value(S0, K, T, r, sigma):
 
 
 def bsm_characteristic_function(u, T, r, sigma):
-    # Characteristic function of X_T = log(S_T / S_0) under the risk-neutral measure.
+    # Characteristic function of X_T = log(S_T / S_0)
+      # under the risk-neutral measure.
     drift = (r - 0.5 * sigma * sigma) * T  # risk-neutral drift term
     var = sigma * sigma * T  # variance of the log-return
     return np.exp(1j * u * drift - 0.5 * var * u * u)
@@ -52,9 +53,12 @@ def lewis_integrand(u, S0, K, T, r, sigma):
 
 def bsm_call_value_lewis(S0, K, T, r, sigma, u_max=100.0):
     # BSM call value via the Lewis (2001) Fourier integral representation.
-    int_value = quad(lambda u: lewis_integrand(u, S0, K, T, r, sigma), 0.0, u_max)[0]
+    int_value = quad(
+        lambda u: lewis_integrand(u, S0, K, T, r, sigma), 0.0, u_max
+    )[0]
       # numerical integral approximation
-    factor = math.exp(-r * T) * math.sqrt(S0 * K) / math.pi  # integral prefactor
+    factor = math.exp(-r * T) * math.sqrt(S0 * K) / math.pi
+      # integral prefactor
     value = S0 - factor * int_value  # Lewis call value
     return max(0.0, float(value))
 

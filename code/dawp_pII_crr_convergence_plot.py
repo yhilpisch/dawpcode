@@ -74,10 +74,13 @@ def main():
     sigma = 0.20  # volatility
 
     M_grid = np.arange(5, 401, 5)  # number of time steps for convergence plot
-    crr_vals = np.array([crr_call_value(S0, K, T, r, sigma, int(m)) for m in M_grid])
+    crr_vals = np.array(
+        [crr_call_value(S0, K, T, r, sigma, int(m)) for m in M_grid]
+    )
       # CRR call values as a function of M
 
-    bsm_benchmark = bsm_call_value(S0, K, T, r, sigma)  # BSM benchmark call value
+    bsm_benchmark = bsm_call_value(S0, K, T, r, sigma)
+      # BSM benchmark call value
 
     fig, ax = plt.subplots()  # create a single plot
     ax.plot(M_grid, crr_vals, lw=2.0, label="CRR values")  # CRR value curve

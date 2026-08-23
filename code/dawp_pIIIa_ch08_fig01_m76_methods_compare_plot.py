@@ -81,7 +81,8 @@ def main():
     ax.set_title("Merton (1976) call values by different methods")  # title
     ax.legend(loc=0)  # place the legend
 
-    maybe_save(fig, "dawp_pIIIa_fig01_m76_methods_compare")  # optional PDF export
+    maybe_save(fig, "dawp_pIIIa_fig01_m76_methods_compare")
+      # optional PDF export
     plt.show()  # display the plot
 
 

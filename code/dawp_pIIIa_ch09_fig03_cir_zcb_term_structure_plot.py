@@ -34,10 +34,16 @@ def main() -> None:
     maturities = np.linspace(0.25, 10.0, 40)
 
     prices = np.array(
-        [cir_zcb_value(r0, kappa_r, theta_r, sigma_r, T=float(T)) for T in maturities]
+        [
+            cir_zcb_value(r0, kappa_r, theta_r, sigma_r, T=float(T))
+            for T in maturities
+        ]
     )
     yields = np.array(
-        [cir_zcb_yield(r0, kappa_r, theta_r, sigma_r, T=float(T)) for T in maturities]
+        [
+            cir_zcb_yield(r0, kappa_r, theta_r, sigma_r, T=float(T))
+            for T in maturities
+        ]
     )
 
     fig, ax = plt.subplots(2, 1, sharex=True, figsize=(8.2, 5.8))
@@ -50,7 +56,9 @@ def main() -> None:
     ax[1].set_ylabel("yield $y_0(T)$ in \\%")
     ax[1].grid(True)
 
-    fig.suptitle("CIR (1985) term structure: discount factors and yields", y=0.98)
+    fig.suptitle(
+        "CIR (1985) term structure: discount factors and yields", y=0.98
+    )
     fig.tight_layout()
 
     maybe_save(fig, "dawp_pIIIa_fig03_cir_term_structure")

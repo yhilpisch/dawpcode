@@ -14,7 +14,8 @@ from scipy.integrate import quad  # numerical integration
 
 
 def m76_char_func(u, T, r, sigma, lamb, mu, delta):
-    # Characteristic function of X_T = log(S_T / S_0) under risk-neutral dynamics.
+    # Characteristic function of X_T = log(S_T / S_0)
+      # under risk-neutral dynamics.
     kappa = math.exp(mu + 0.5 * delta * delta) - 1.0  # mean jump size minus one
     omega = r - 0.5 * sigma * sigma - lamb * kappa
       # risk-neutral drift of log-return
@@ -41,7 +42,8 @@ def m76_call_value_int(S0, K, T, r, sigma, lamb, mu, delta, u_max=50.0):
 
 
 def m76_call_value_fft(S0, K, T, r, sigma, lamb, mu, delta, g=2):
-    # European call value via Carr-Madan FFT method (single strike via grid lookup).
+    # European call value via Carr-Madan FFT method
+      # (single strike via grid lookup).
     k = math.log(K / S0)  # log-strike in terms of K/S0
     N = g * 4096  # FFT grid size
     eps = (g * 150.0) ** -1  # log-strike grid spacing
@@ -54,7 +56,9 @@ def m76_call_value_fft(S0, K, T, r, sigma, lamb, mu, delta, g=2):
     if S0 >= 0.95 * K:
         alpha = 1.5  # damping parameter for ITM
         v = v0 - (alpha + 1.0) * 1j  # complex argument for CF
-        mod_cf = math.exp(-r * T) * m76_char_func(v, T, r, sigma, lamb, mu, delta)
+        mod_cf = math.exp(-r * T) * m76_char_func(
+            v, T, r, sigma, lamb, mu, delta
+        )
           # discounted characteristic function
         den = alpha * alpha + alpha - v0 * v0 + 1j * (2.0 * alpha + 1.0) * v0
           # Carr-Madan denominator
@@ -124,7 +128,8 @@ def m76_call_value_mcs(
     J = rng.standard_normal((n_steps, n_paths))  # jump size shocks
     N = rng.poisson(lamb * dt, (n_steps, n_paths))  # jump counts
 
-    log_jump = mu * N + delta * np.sqrt(N) * J  # aggregated log jump sizes per step
+    log_jump = mu * N + delta * np.sqrt(N) * J
+      # aggregated log jump sizes per step
     log_increments = drift + vol * Z + log_jump  # log increments
 
     S_T = S0 * np.exp(np.sum(log_increments, axis=0))  # terminal stock levels

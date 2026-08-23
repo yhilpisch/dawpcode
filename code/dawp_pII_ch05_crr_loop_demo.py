@@ -12,7 +12,8 @@ import numpy as np  # numerical arrays
 
 
 def crr_call_value_loop(S0, K, T, r, sigma, M=200):
-    # Values a European call option via a CRR binomial tree using explicit loops.
+    # Values a European call option via a CRR binomial tree
+      # using explicit loops.
     dt = T / M  # time step length
     disc = math.exp(-r * dt)  # discount factor per step
     u = math.exp(sigma * math.sqrt(dt))  # up factor

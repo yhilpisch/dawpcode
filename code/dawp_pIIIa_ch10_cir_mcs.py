@@ -35,7 +35,8 @@ def cir_generate_paths_exact(
     # Scale parameter of the chi-square representation.
     c = (sigma_r * sigma_r * (1.0 - math.exp(-kappa_r * dt))) / (4.0 * kappa_r)
     exp_kdt = math.exp(-kappa_r * dt)  # mean reversion factor per step
-    denom = sigma_r * sigma_r * (1.0 - exp_kdt)  # denominator for non-centrality
+    denom = sigma_r * sigma_r * (1.0 - exp_kdt)
+      # denominator for non-centrality
 
     for t in range(1, n_steps + 1):
         # Non-centrality parameter per path.
@@ -81,7 +82,8 @@ def zcb_value_mcs(
     r_paths: np.ndarray,
     T: float,
 ) -> np.ndarray:
-    # Returns Monte Carlo estimates B_t(T) for all grid times t along the simulation.
+    # Returns Monte Carlo estimates B_t(T)
+      # for all grid times t along the simulation.
     n_steps = r_paths.shape[0] - 1
     dt = T / n_steps  # time step length
 

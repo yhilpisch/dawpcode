@@ -33,7 +33,7 @@ def norm_cdf(x):
 
 
 def bsm_call_value(S0, K, T, r, sigma):
-    # Black--Scholes--Merton call option value for non-dividend paying underlyings.
+    # Black--Scholes--Merton call value for non-dividend paying underlyings.
     if T <= 0.0:
         return max(S0 - K, 0.0)
     if sigma <= 0.0:

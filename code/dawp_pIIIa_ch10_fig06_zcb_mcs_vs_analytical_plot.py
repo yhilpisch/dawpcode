@@ -68,20 +68,30 @@ def main() -> None:
         if t >= T:
             ana[i] = 1.0
         else:
-            ana[i] = cir_zcb_value(r0, kappa_r, theta_r, sigma_r, T=T, t=float(t))
+            ana[i] = cir_zcb_value(
+                r0, kappa_r, theta_r, sigma_r, T=T, t=float(t)
+            )
 
     fig, ax = plt.subplots(2, 1, sharex=True, figsize=(8.2, 6.2))
 
     ax[0].plot(t_grid, ana, lw=2.0, label="analytical")
-    ax[0].plot(t_grid, mcs_exact, lw=0.0, marker="o", ms=3.5, label="MCS (exact)")
-    ax[0].plot(t_grid, mcs_euler, lw=0.0, marker="x", ms=3.8, label="MCS (Euler)")
+    ax[0].plot(
+        t_grid, mcs_exact, lw=0.0, marker="o", ms=3.5, label="MCS (exact)"
+    )
+    ax[0].plot(
+        t_grid, mcs_euler, lw=0.0, marker="x", ms=3.8, label="MCS (Euler)"
+    )
     ax[0].set_ylabel("ZCB value $B_t(T)$")
     ax[0].set_title("CIR (1985) ZCB valuation for maturity $T=2$")
     ax[0].grid(True)
     ax[0].legend(loc=0)
 
-    ax[1].bar(t_grid - 0.01, mcs_exact - ana, width=0.02, label="exact - analytical")
-    ax[1].bar(t_grid + 0.01, mcs_euler - ana, width=0.02, label="Euler - analytical")
+    ax[1].bar(
+        t_grid - 0.01, mcs_exact - ana, width=0.02, label="exact - analytical"
+    )
+    ax[1].bar(
+        t_grid + 0.01, mcs_euler - ana, width=0.02, label="Euler - analytical"
+    )
     ax[1].set_xlabel("valuation time $t$")
     ax[1].set_ylabel("difference")
     ax[1].grid(True)

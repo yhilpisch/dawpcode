@@ -44,7 +44,8 @@ def bsm_put_value(S0, K, T, r, sigma):
 
 
 def bsm_values_on_grid(S0_grid, K, T, r, sigma):
-    # Vectorized helper returning call and put values on a grid of underlying levels.
+    # Vectorized helper returning call and put values
+      # on a grid of underlying levels.
     call_vals = np.array([bsm_call_value(x, K, T, r, sigma) for x in S0_grid])
       # call values on the grid
     put_vals = np.array([bsm_put_value(x, K, T, r, sigma) for x in S0_grid])

@@ -16,12 +16,16 @@ from scipy.integrate import quad  # numerical integration
 from dawp_pIIIa_ch09_cir_zcb import cir_zcb_value  # CIR discounting helper
 
 
-def bsm_call_value(S0: float, K: float, T: float, r: float, sigma: float) -> float:
+def bsm_call_value(
+    S0: float, K: float, T: float, r: float, sigma: float
+) -> float:
     # European BSM call value with constant short rate and volatility.
     if T <= 0.0:
         return float(max(S0 - K, 0.0))
 
-    d1 = (math.log(S0 / K) + (r + 0.5 * sigma * sigma) * T) / (sigma * math.sqrt(T))
+    d1 = (math.log(S0 / K) + (r + 0.5 * sigma * sigma) * T) / (
+        sigma * math.sqrt(T)
+    )
     d2 = d1 - sigma * math.sqrt(T)
 
     from math import erf  # local import to keep module dependencies minimal
@@ -39,7 +43,9 @@ def m76_char_func(u: complex | np.ndarray, T: float, lamb: float, mu: float,
     # Compensator for the jump component only.
     omega = -lamb * (math.exp(mu + 0.5 * delta * delta) - 1.0)
     jump_cf = np.exp(1j * u * omega * T)
-    jump_cf *= np.exp(lamb * T * (np.exp(1j * u * mu - 0.5 * delta * delta * u * u) - 1.0))
+    jump_cf *= np.exp(
+        lamb * T * (np.exp(1j * u * mu - 0.5 * delta * delta * u * u) - 1.0)
+    )
     return jump_cf
 
 
@@ -53,9 +59,12 @@ def h93_char_func(
     rho: float,
     v0: float,
 ) -> complex | np.ndarray:
-    # Characteristic function of log-return X_T = log(S_T / S_0) in the Heston model.
+    # Characteristic function of log-return X_T = log(S_T / S_0)
+      # in the Heston model.
     iu = 1j * u  # i * u
-    d = np.sqrt((rho * sigma_v * iu - kappa_v) ** 2 + sigma_v * sigma_v * (iu + u * u))
+    d = np.sqrt(
+        (rho * sigma_v * iu - kappa_v) ** 2 + sigma_v * sigma_v * (iu + u * u)
+    )
     g = (kappa_v - rho * sigma_v * iu - d) / (kappa_v - rho * sigma_v * iu + d)
 
     exp_dt = np.exp(-d * T)  # exponential term
@@ -84,9 +93,9 @@ def bcc_char_func(
     delta: float,
 ) -> complex | np.ndarray:
     # Characteristic function of log-return in the Bates (1996) model.
-    return h93_char_func(u, T, r, kappa_v, theta_v, sigma_v, rho, v0) * m76_char_func(
-        u, T, lamb, mu, delta
-    )
+    return h93_char_func(
+        u, T, r, kappa_v, theta_v, sigma_v, rho, v0
+    ) * m76_char_func(u, T, lamb, mu, delta)
 
 
 def lewis_call_value(
@@ -143,7 +152,8 @@ def bcc_call_value_int(
     mu: float,
     delta: float,
 ) -> float:
-    # European call value in the Bates (1996) model via the Lewis (2001) formula.
+    # European call value in the Bates (1996) model
+      # via the Lewis (2001) formula.
     args = (T, r, kappa_v, theta_v, sigma_v, rho, v0, lamb, mu, delta)
     return lewis_call_value(S0, K, T, r, bcc_char_func, args)
 

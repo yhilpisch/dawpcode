@@ -11,6 +11,7 @@
 *.idx
 *.ilg
 *.ind
+*.listing
 *.lof
 *.log
 *.lot

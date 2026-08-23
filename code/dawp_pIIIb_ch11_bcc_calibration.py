@@ -21,7 +21,9 @@ from dawp_pIIIa_ch09_bcc_option_valuation import cir_implied_short_rate
 
 
 DATA_PATH = Path(__file__).resolve().with_name("dawp_pIIIa_ch08_option_data.h5")
-PARAM_PATH = Path(__file__).resolve().with_name("dawp_pIIIb_ch11_bcc_params.npy")
+PARAM_PATH = Path(__file__).resolve().with_name(
+    "dawp_pIIIb_ch11_bcc_params.npy"
+)
 
 
 def load_option_data() -> pd.DataFrame:

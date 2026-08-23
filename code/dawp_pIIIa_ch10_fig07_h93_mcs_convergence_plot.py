@@ -60,7 +60,9 @@ def main() -> None:
     rel_err = (vals - ref) / ref
 
     fig, ax = plt.subplots(2, 1, sharex=True, figsize=(8.2, 6.2))
-    ax[0].plot(paths_grid, 0.0 * paths_grid + ref, lw=2.0, label="Lewis (benchmark)")
+    ax[0].plot(
+        paths_grid, 0.0 * paths_grid + ref, lw=2.0, label="Lewis (benchmark)"
+    )
     ax[0].plot(paths_grid, vals, lw=0.0, marker="o", ms=5, label="Monte Carlo")
     ax[0].set_ylabel("call value")
     ax[0].set_title("Heston (1993) call values: benchmark vs Monte Carlo")

@@ -92,7 +92,8 @@ def plot_fit(options, S0, r, params):
     ]  # model call prices
 
     mats = sorted(options["Maturity"].unique())  # maturities in the data
-    fig, axes = plt.subplots(len(mats), 1, sharex=True)  # one panel per maturity
+    fig, axes = plt.subplots(len(mats), 1, sharex=True)
+      # one panel per maturity
     if len(mats) == 1:
         axes = [axes]
 
@@ -106,10 +107,12 @@ def plot_fit(options, S0, r, params):
         ax.legend(loc=0)  # place the legend
 
     axes[-1].set_xlabel("strike K")  # x-axis label
-    fig.suptitle("Merton (1976) calibration fit across maturities")  # overall title
+    fig.suptitle("Merton (1976) calibration fit across maturities")
+      # overall title
     fig.tight_layout()  # improve spacing
 
-    maybe_save(fig, "dawp_pIIIa_fig02_m76_calibration_fit")  # optional PDF export
+    maybe_save(fig, "dawp_pIIIa_fig02_m76_calibration_fit")
+      # optional PDF export
     plt.show()  # display the plot
 
 

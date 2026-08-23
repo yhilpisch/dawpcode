@@ -45,7 +45,9 @@ def main():
       # analytical BSM call values
     lewis = np.array([bsm_call_value_lewis(S0, k, T, r, sigma) for k in K_grid])
       # Lewis integral call values
-    fft_vals = np.array([bsm_call_value_fft(S0, k, T, r, sigma) for k in K_grid])
+    fft_vals = np.array(
+        [bsm_call_value_fft(S0, k, T, r, sigma) for k in K_grid]
+    )
       # Carr-Madan FFT call values
 
     rel_err_lewis = (lewis - ana) / np.maximum(ana, 1e-12)  # relative error

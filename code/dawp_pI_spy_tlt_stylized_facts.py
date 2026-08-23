@@ -47,7 +47,8 @@ def load_prices():
     raw = raw.sort_values(date_col)  # sort by time
 
     cols_lower = {c.lower(): c for c in raw.columns}  # lower-case lookup
-    sym_col = cols_lower.get("symbol") or cols_lower.get("ticker")  # symbol column
+    sym_col = cols_lower.get("symbol") or cols_lower.get("ticker")
+      # symbol column
 
     price_candidates = [
         "adj_close",

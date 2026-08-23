@@ -62,7 +62,10 @@ def main() -> None:
     ax.plot(strikes, bsm, lw=2.0, label="BSM (diffusion)")
     ax.plot(strikes, m76, lw=2.0, ls="--", label="Merton (jumps)")
     ax.plot(strikes, h93, lw=2.0, ls="-.", label="Heston (stoch. vol)")
-    ax.plot(strikes, bcc, lw=2.0, color="tab:red", label="Bates (stoch. vol + jumps)")
+    ax.plot(
+        strikes, bcc, lw=2.0, color="tab:red",
+        label="Bates (stoch. vol + jumps)"
+    )
 
     ax.set_xlabel("strike $K$")
     ax.set_ylabel("call value")
