@@ -1,11 +1,11 @@
-#
-# Black-Scholes-Merton Call and Put Value Curves
-# dawp_pII_bsm_values_plot.py
-#
-# (c) Dr. Yves J. Hilpisch
-# Derivatives Analytics with Python
-#
+"""Derivatives Analytics with Python.
 
+Black-Scholes-Merton Call and Put Value Curves.
+(c) Dr. Yves J. Hilpisch
+AI-Powered by different LLMs
+The Python Quants GmbH | https://tpq.io
+https://hilpisch.com | https://linktr.ee/dyjh
+"""
 import math  # elementary math functions
 from pathlib import Path  # path handling for optional figure export
 
@@ -56,7 +56,6 @@ def bsm_put_value(S0, K, T, r, sigma):
 
 def main():
     # Plots call and put values as functions of the underlying level.
-    S0 = 100.0  # initial underlying level
     K = 100.0  # strike level
     T = 1.0  # time to maturity in years
     r = 0.05  # constant short rate
@@ -90,4 +89,3 @@ def main():
 
 if __name__ == "__main__":
     main()  # run the main function
-

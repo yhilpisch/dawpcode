@@ -1,11 +1,11 @@
-#
-# Merton (1976) Jump Diffusion: Pricing Building Blocks
-# dawp_pIIIa_ch08_m76_pricing.py
-#
-# (c) Dr. Yves J. Hilpisch
-# Derivatives Analytics with Python
-#
+"""Derivatives Analytics with Python.
 
+Merton (1976) Jump Diffusion: Pricing Building Blocks.
+(c) Dr. Yves J. Hilpisch
+AI-Powered by different LLMs
+The Python Quants GmbH | https://tpq.io
+https://hilpisch.com | https://linktr.ee/dyjh
+"""
 import math  # elementary math functions
 
 import numpy as np  # numerical arrays

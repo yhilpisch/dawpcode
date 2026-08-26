@@ -1,11 +1,11 @@
-#
-# Merton (1976) Jump Diffusion: Call Valuation by Monte Carlo Simulation
-# dawp_pIIIa_ch08_m76_valuation_mcs.py
-#
-# (c) Dr. Yves J. Hilpisch
-# Derivatives Analytics with Python
-#
+"""Derivatives Analytics with Python.
 
+Merton (1976) Jump Diffusion: Call Valuation by Monte Carlo Simulation.
+(c) Dr. Yves J. Hilpisch
+AI-Powered by different LLMs
+The Python Quants GmbH | https://tpq.io
+https://hilpisch.com | https://linktr.ee/dyjh
+"""
 from dawp_pIIIa_ch08_m76_pricing import m76_call_value_mcs
 
 
@@ -42,4 +42,3 @@ def main():
 
 if __name__ == "__main__":
     main()  # run the main function
-

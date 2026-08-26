@@ -1,11 +1,11 @@
-#
-# Stylized Facts from SPY and TLT (EOD Data)
-# dawp_pI_spy_tlt_stylized_facts.py
-#
-# (c) Dr. Yves J. Hilpisch
-# Derivatives Analytics with Python
-#
+"""Derivatives Analytics with Python.
 
+Stylized Facts from SPY and TLT (EOD Data).
+(c) Dr. Yves J. Hilpisch
+AI-Powered by different LLMs
+The Python Quants GmbH | https://tpq.io
+https://hilpisch.com | https://linktr.ee/dyjh
+"""
 import math  # math functions
 from pathlib import Path  # path handling for optional figure export
 

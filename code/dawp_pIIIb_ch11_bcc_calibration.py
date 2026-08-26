@@ -1,14 +1,14 @@
-#
-# Bakshi-Cao-Chen (1997): Calibration Helpers for Part IIIb
-# dawp_pIIIb_ch11_bcc_calibration.py
-#
-# (c) Dr. Yves J. Hilpisch
-# Derivatives Analytics with Python
-#
+"""Derivatives Analytics with Python.
 
+Bakshi-Cao-Chen (1997): Calibration Helpers for Part IIIb.
+(c) Dr. Yves J. Hilpisch
+AI-Powered by different LLMs
+The Python Quants GmbH | https://tpq.io
+https://hilpisch.com | https://linktr.ee/dyjh
+"""
 from __future__ import annotations
 
-import math  # elementary math functions
+import json  # JSON parameter persistence
 from pathlib import Path  # robust path handling
 from typing import Dict, Tuple  # type hints
 
@@ -20,9 +20,11 @@ from dawp_pIIIa_ch09_bcc_option_valuation import bcc_call_value_int
 from dawp_pIIIa_ch09_bcc_option_valuation import cir_implied_short_rate
 
 
-DATA_PATH = Path(__file__).resolve().with_name("dawp_pIIIa_ch08_option_data.h5")
+DATA_PATH = Path(__file__).resolve().with_name(
+    "dawp_pIIIa_ch08_option_data.csv"
+)
 PARAM_PATH = Path(__file__).resolve().with_name(
-    "dawp_pIIIb_ch11_bcc_params.npy"
+    "dawp_pIIIb_ch11_bcc_params.json"
 )
 
 
@@ -32,8 +34,8 @@ def load_option_data() -> pd.DataFrame:
     The data file contains European calls and puts for several strikes and
     maturities (30 September 2014). Time-to-maturity is added in years.
     """
-    data = pd.read_hdf(DATA_PATH, key="data")
-      # options table
+    data = pd.read_csv(DATA_PATH, parse_dates=["Date", "Maturity"])
+      # options table from the CSV snapshot
     data = data.copy()
       # avoid chained assignment issues
     data["Date"] = pd.to_datetime(data["Date"])
@@ -211,12 +213,12 @@ def calibrate_bcc_full(
       # initial guess (Heston plus jump parameters)
 
     bounds = [
-        (0.5, 10.0),   # kappa_v
+        (0.5, 10.0),  # kappa_v
         (0.005, 0.10),  # theta_v
         (0.05, 0.80),  # sigma_v
         (-0.95, -0.05),  # rho
         (0.005, 0.10),  # v0
-        (0.0, 5.0),    # lamb
+        (0.0, 5.0),  # lamb
         (-0.80, 0.0),  # mu_j
         (0.01, 0.80),  # delta
     ]
@@ -252,7 +254,9 @@ def calibrate_bcc_full(
     }
 
     if bool(res.success):
-        np.save(PARAM_PATH, params)
+        PARAM_PATH.write_text(
+            json.dumps(params, indent=2, sort_keys=True) + "\n"
+        )  # persist parameters as text
 
     return params, float(res.fun)
 
@@ -261,11 +265,11 @@ def load_bcc_parameters() -> Dict[str, float]:
     """Loads calibrated BCC parameters or returns a reasonable default set.
 
     The function first tries to read the parameter dictionary from the local
-    NumPy file. If this fails, it falls back to a stylized parameter set that
+    JSON file. If this fails, it falls back to a stylized parameter set that
     is consistent with the examples in the book.
     """
     if PARAM_PATH.exists():
-        data = np.load(PARAM_PATH, allow_pickle=True).item()
+        data = json.loads(PARAM_PATH.read_text())
         if isinstance(data, dict):
             return data
 

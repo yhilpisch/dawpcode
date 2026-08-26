@@ -1,11 +1,11 @@
-#
-# Short Condor Spread Payoff Figure
-# dawp_pII_ch07_short_condor_payoff_plot.py
-#
-# (c) Dr. Yves J. Hilpisch
-# Derivatives Analytics with Python
-#
+"""Derivatives Analytics with Python.
 
+Short Condor Spread Payoff Figure.
+(c) Dr. Yves J. Hilpisch
+AI-Powered by different LLMs
+The Python Quants GmbH | https://tpq.io
+https://hilpisch.com | https://linktr.ee/dyjh
+"""
 from pathlib import Path  # path handling for optional figure export
 
 import numpy as np  # numerical arrays
@@ -45,4 +45,3 @@ def main():
 
 if __name__ == "__main__":
     main()  # run the main function
-

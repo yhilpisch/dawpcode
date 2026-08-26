@@ -1,11 +1,11 @@
-#
-# Dynamic Hedging of an American Put in the BSM Model
-# dawp_pIIIb_ch13_bsm_hedging.py
-#
-# (c) Dr. Yves J. Hilpisch
-# Derivatives Analytics with Python
-#
+"""Derivatives Analytics with Python.
 
+Dynamic Hedging of an American Put in the BSM Model.
+(c) Dr. Yves J. Hilpisch
+AI-Powered by different LLMs
+The Python Quants GmbH | https://tpq.io
+https://hilpisch.com | https://linktr.ee/dyjh
+"""
 from __future__ import annotations
 
 import math  # elementary math functions
@@ -238,4 +238,3 @@ if __name__ == "__main__":
         seed=50_000,
         path_index=0,
     )
-

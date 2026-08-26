@@ -1,12 +1,11 @@
-#
-# Merton (1976) Calibration to Option Market Data (Three Maturities)
-# dawp_pIIIa_ch08_calibration_fft_3m.py
-#
-# (c) Dr. Yves J. Hilpisch
-# Derivatives Analytics with Python
-#
+"""Derivatives Analytics with Python.
 
-import math  # elementary math functions
+Merton (1976) Calibration to Option Market Data (Three Maturities).
+(c) Dr. Yves J. Hilpisch
+AI-Powered by different LLMs
+The Python Quants GmbH | https://tpq.io
+https://hilpisch.com | https://linktr.ee/dyjh
+"""
 from pathlib import Path  # robust path handling
 
 import numpy as np  # numerical arrays
@@ -20,7 +19,9 @@ FIG_SAVE = False  # set to True to export figures as PDFs
 FIG_DIR = Path("../figures")  # figure output directory
 FIG_DPI = 300  # target resolution for exported figures
 
-DATA_PATH = Path(__file__).resolve().with_name("dawp_pIIIa_ch08_option_data.h5")
+DATA_PATH = Path(__file__).resolve().with_name(
+    "dawp_pIIIa_ch08_option_data.csv"
+)
 
 
 def maybe_save(fig, filename):
@@ -34,8 +35,11 @@ def maybe_save(fig, filename):
 
 
 def load_option_data():
-    # Loads the option data table from the local HDF5 file.
-    data = pd.read_hdf(DATA_PATH, key="data")  # options table
+    # Loads the option data table from the local CSV snapshot.
+    data = pd.read_csv(
+        DATA_PATH,
+        parse_dates=["Date", "Maturity"],
+    )  # options table
     data = data.copy()  # explicit copy to avoid view warnings
 
     data["Date"] = pd.to_datetime(data["Date"])  # valuation date
@@ -141,4 +145,3 @@ def main():
 
 if __name__ == "__main__":
     main()  # run the main function
-

@@ -1,11 +1,11 @@
-#
-# Fourier-Based Pricing in the Black-Scholes-Merton Model
-# dawp_pII_ch06_fourier_pricing_bsm.py
-#
-# (c) Dr. Yves J. Hilpisch
-# Derivatives Analytics with Python
-#
+"""Derivatives Analytics with Python.
 
+Fourier-Based Pricing in the Black-Scholes-Merton Model.
+(c) Dr. Yves J. Hilpisch
+AI-Powered by different LLMs
+The Python Quants GmbH | https://tpq.io
+https://hilpisch.com | https://linktr.ee/dyjh
+"""
 import math  # elementary math functions
 
 import numpy as np  # numerical arrays

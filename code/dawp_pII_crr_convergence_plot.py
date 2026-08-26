@@ -1,11 +1,11 @@
-#
-# Cox-Ross-Rubinstein Convergence to the BSM Benchmark
-# dawp_pII_crr_convergence_plot.py
-#
-# (c) Dr. Yves J. Hilpisch
-# Derivatives Analytics with Python
-#
+"""Derivatives Analytics with Python.
 
+Cox-Ross-Rubinstein Convergence to the BSM Benchmark.
+(c) Dr. Yves J. Hilpisch
+AI-Powered by different LLMs
+The Python Quants GmbH | https://tpq.io
+https://hilpisch.com | https://linktr.ee/dyjh
+"""
 import math  # elementary math functions
 from pathlib import Path  # path handling for optional figure export
 
@@ -103,4 +103,3 @@ def main():
 
 if __name__ == "__main__":
     main()  # run the main function
-

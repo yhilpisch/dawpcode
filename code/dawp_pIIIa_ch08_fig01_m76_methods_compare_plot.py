@@ -1,11 +1,11 @@
-#
-# Merton (1976) Pricing Method Comparison Figure
-# dawp_pIIIa_ch08_fig01_m76_methods_compare_plot.py
-#
-# (c) Dr. Yves J. Hilpisch
-# Derivatives Analytics with Python
-#
+"""Derivatives Analytics with Python.
 
+Merton (1976) Pricing Method Comparison Figure.
+(c) Dr. Yves J. Hilpisch
+AI-Powered by different LLMs
+The Python Quants GmbH | https://tpq.io
+https://hilpisch.com | https://linktr.ee/dyjh
+"""
 from pathlib import Path  # path handling for optional figure export
 
 import numpy as np  # numerical arrays
@@ -88,4 +88,3 @@ def main():
 
 if __name__ == "__main__":
     main()  # run the main function
-

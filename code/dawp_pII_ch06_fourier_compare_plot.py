@@ -1,11 +1,11 @@
-#
-# Fourier Pricing in BSM: Analytical vs Lewis Integral vs Carr-Madan FFT
-# dawp_pII_ch06_fourier_compare_plot.py
-#
-# (c) Dr. Yves J. Hilpisch
-# Derivatives Analytics with Python
-#
+"""Derivatives Analytics with Python.
 
+Fourier Pricing in BSM: Analytical vs Lewis Integral vs Carr-Madan FFT.
+(c) Dr. Yves J. Hilpisch
+AI-Powered by different LLMs
+The Python Quants GmbH | https://tpq.io
+https://hilpisch.com | https://linktr.ee/dyjh
+"""
 from pathlib import Path  # path handling for optional figure export
 
 import numpy as np  # numerical arrays

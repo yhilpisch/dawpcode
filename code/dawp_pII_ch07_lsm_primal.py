@@ -1,11 +1,11 @@
-#
-# Longstaff-Schwartz LSM Primal Valuation for an American Put
-# dawp_pII_ch07_lsm_primal.py
-#
-# (c) Dr. Yves J. Hilpisch
-# Derivatives Analytics with Python
-#
+"""Derivatives Analytics with Python.
 
+Longstaff-Schwartz LSM Primal Valuation for an American Put.
+(c) Dr. Yves J. Hilpisch
+AI-Powered by different LLMs
+The Python Quants GmbH | https://tpq.io
+https://hilpisch.com | https://linktr.ee/dyjh
+"""
 import math  # elementary math functions
 from dataclasses import dataclass  # structured parameter container
 from pathlib import Path  # path handling for optional figure export
@@ -94,8 +94,8 @@ def lsm_american_put_value(S, K, r, T, poly_degree=5, itm_only=True):
               # polynomial regression coefficients
             cont = np.polyval(coeff, x)  # continuation value estimate
 
-        ex_now = h[t] > cont  # exercise decision
-        exercise[t] = ex_now & (h[t] > 0.0)  # only exercise if ITM
+        ex_now = (h[t] > 0.0) & (h[t] > cont)  # exercise only if ITM
+        exercise[t] = ex_now  # record exercise decisions
         V = np.where(ex_now, h[t], V * df)  # update along paths
 
     V0 = float(df * np.mean(V))  # discount from time 1 to time 0

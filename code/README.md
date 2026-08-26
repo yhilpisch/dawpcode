@@ -34,7 +34,8 @@ This folder contains the Python scripts and small data files used throughout *De
 - `dawp_pIIIa_ch08_m76_pricing.py` — convenience wrapper for Merton pricing routines across methods.
 - `dawp_pIIIa_ch08_calibration_fft_3m.py` — calibrates the Merton model to option data using FFT-based pricing.
 - `dawp_pIIIa_ch08_fig01_m76_methods_compare_plot.py` — compares Merton call values across methods (integration, FFT, Monte Carlo) for a figure.
-- `dawp_pIIIa_ch08_option_data.h5` — example Merton calibration data set in HDF5 format.
+- `dawp_pIIIa_ch08_option_data.csv` — example Merton calibration data snapshot.
+- `dawp_pIIIa_ch08_option_data.meta.json` — provenance and schema metadata for the option snapshot.
 - `dawp_pIIIa_ch09_cir_zcb.py` — implements CIR zero-coupon bond valuation and yields.
 - `dawp_pIIIa_ch09_fig03_cir_zcb_term_structure_plot.py` — plots CIR discount factors and term structures.
 - `dawp_pIIIa_ch09_bcc_option_valuation.py` — provides transform-based valuation routines for the BCC-style framework and special cases.
@@ -48,10 +49,9 @@ This folder contains the Python scripts and small data files used throughout *De
 ## Part IIIb — Market-Based Valuation (Calibration and Hedging)
 
 - `dawp_pIIIb_ch11_bcc_calibration.py` — calibrates the BCC-style framework to an index option surface using transform-based pricing.
-- `dawp_pIIIb_ch11_bcc_params.npy` — example calibrated parameter vector saved as a NumPy array.
+- `dawp_pIIIb_ch11_bcc_params.json` — example calibrated parameter set in a text format.
 - `dawp_pIIIb_ch12_bcc_mcs.py` — Monte Carlo simulation engine for the calibrated BCC-style model (rates, volatility, and index paths).
 - `dawp_pIIIb_ch13_bsm_hedging.py` — dynamic delta hedging experiments for an American put under BSM dynamics using LSM.
 - `dawp_pIIIb_ch13_bcc_hedging.py` — dynamic delta hedging experiments for an American put under calibrated BCC dynamics, including hedging P&L diagnostics.
 
 Each script is designed to be readable and reusable. You can import the functions into your own projects or run the scripts directly to regenerate figures and numerical examples from the book.
-

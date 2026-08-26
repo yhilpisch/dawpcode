@@ -1,11 +1,11 @@
-#
-# Monte Carlo Simulation and LSM in the BCC (1997) Model
-# dawp_pIIIb_ch12_bcc_mcs.py
-#
-# (c) Dr. Yves J. Hilpisch
-# Derivatives Analytics with Python
-#
+"""Derivatives Analytics with Python.
 
+Monte Carlo Simulation and LSM in the BCC (1997) Model.
+(c) Dr. Yves J. Hilpisch
+AI-Powered by different LLMs
+The Python Quants GmbH | https://tpq.io
+https://hilpisch.com | https://linktr.ee/dyjh
+"""
 from __future__ import annotations
 
 import math  # elementary math functions

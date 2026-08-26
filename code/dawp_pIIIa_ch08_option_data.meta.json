@@ -1,0 +1,22 @@
+{
+  "source_institution": "Eurex",
+  "source_urls": [
+    "https://www.eurex.com/",
+    "https://github.com/yhilpisch/dawp"
+  ],
+  "retrieval_date": null,
+  "redistribution_note": "Educational snapshot from the public DAWP companion project. Verify market-data redistribution rights before external publication.",
+  "transformation_summary": "Converted from the legacy HDF5 data table to CSV; nanosecond timestamps were normalized to ISO 8601 dates and numeric values were preserved.",
+  "schema": {
+    "Date": "valuation date (YYYY-MM-DD)",
+    "Strike": "option strike (index points)",
+    "Call": "European call value (index points)",
+    "Maturity": "option maturity date (YYYY-MM-DD)",
+    "Put": "European put value (index points)"
+  },
+  "intended_chapter_usage": [
+    "Chapter 8 Merton calibration",
+    "Chapter 11 BCC calibration",
+    "Chapters 12-13 calibrated simulation and hedging"
+  ]
+}

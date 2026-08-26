@@ -1,11 +1,11 @@
-#
-# European Call Option Present Value vs Inner Value Plot
-# dawp_pI_bsm_vs_inner_plot.py
-#
-# (c) Dr. Yves J. Hilpisch
-# Derivatives Analytics with Python
-#
+"""Derivatives Analytics with Python.
 
+European Call Option Present Value vs Inner Value Plot.
+(c) Dr. Yves J. Hilpisch
+AI-Powered by different LLMs
+The Python Quants GmbH | https://tpq.io
+https://hilpisch.com | https://linktr.ee/dyjh
+"""
 import math  # math functions for the BSM formula
 from pathlib import Path  # path handling for optional figure export
 

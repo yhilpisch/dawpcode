@@ -1,11 +1,11 @@
-#
-# Cox-Ross-Rubinstein Binomial Model for European Option Valuation
-# dawp_pII_ch05_crr_option_valuation.py
-#
-# (c) Dr. Yves J. Hilpisch
-# Derivatives Analytics with Python
-#
+"""Derivatives Analytics with Python.
 
+Cox-Ross-Rubinstein Binomial Model for European Option Valuation.
+(c) Dr. Yves J. Hilpisch
+AI-Powered by different LLMs
+The Python Quants GmbH | https://tpq.io
+https://hilpisch.com | https://linktr.ee/dyjh
+"""
 import math  # elementary math functions
 from pathlib import Path  # path handling for optional figure export
 

@@ -1,11 +1,11 @@
-#
-# Cox-Ingersoll-Ross (1985): Zero-Coupon Bond Valuation
-# dawp_pIIIa_ch09_cir_zcb.py
-#
-# (c) Dr. Yves J. Hilpisch
-# Derivatives Analytics with Python
-#
+"""Derivatives Analytics with Python.
 
+Cox-Ingersoll-Ross (1985): Zero-Coupon Bond Valuation.
+(c) Dr. Yves J. Hilpisch
+AI-Powered by different LLMs
+The Python Quants GmbH | https://tpq.io
+https://hilpisch.com | https://linktr.ee/dyjh
+"""
 from __future__ import annotations
 
 import math  # elementary math functions

@@ -1,11 +1,11 @@
-#
-# CIR (1985) ZCB Valuation: MCS vs Analytical Figure
-# dawp_pIIIa_ch10_fig06_zcb_mcs_vs_analytical_plot.py
-#
-# (c) Dr. Yves J. Hilpisch
-# Derivatives Analytics with Python
-#
+"""Derivatives Analytics with Python.
 
+CIR (1985) ZCB Valuation: MCS vs Analytical Figure.
+(c) Dr. Yves J. Hilpisch
+AI-Powered by different LLMs
+The Python Quants GmbH | https://tpq.io
+https://hilpisch.com | https://linktr.ee/dyjh
+"""
 from pathlib import Path  # path handling for optional figure export
 
 import numpy as np  # numerical arrays

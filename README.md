@@ -34,7 +34,7 @@ The notebooks are designed to run in a standard Scientific Python environment (o
 - Python 3.11+
 - `numpy`, `pandas`, `matplotlib`
 - `scipy`, `numba` (where used)
-- `h5py` for reading HDF5 option data
+- CSV support provided by `pandas` for reading the bundled option snapshot
 
 The scripts under `code/` are written so that you can either run them as standalone programs (for example to regenerate figures) or import their functions into your own projects.
 

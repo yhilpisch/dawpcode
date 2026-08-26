@@ -1,11 +1,11 @@
-#
-# Black-Scholes-Merton European Call and Put Valuation
-# dawp_pII_ch05_bsm_option_valuation.py
-#
-# (c) Dr. Yves J. Hilpisch
-# Derivatives Analytics with Python
-#
+"""Derivatives Analytics with Python.
 
+Black-Scholes-Merton European Call and Put Valuation.
+(c) Dr. Yves J. Hilpisch
+AI-Powered by different LLMs
+The Python Quants GmbH | https://tpq.io
+https://hilpisch.com | https://linktr.ee/dyjh
+"""
 import math  # elementary math functions
 
 import numpy as np  # numerical arrays
@@ -70,4 +70,3 @@ def main():
 
 if __name__ == "__main__":
     main()  # run the main function
-

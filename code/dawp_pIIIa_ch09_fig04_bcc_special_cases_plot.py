@@ -1,11 +1,11 @@
-#
-# BCC (1997) Special Cases: Call Values Figure
-# dawp_pIIIa_ch09_fig04_bcc_special_cases_plot.py
-#
-# (c) Dr. Yves J. Hilpisch
-# Derivatives Analytics with Python
-#
+"""Derivatives Analytics with Python.
 
+BCC (1997) Special Cases: Call Values Figure.
+(c) Dr. Yves J. Hilpisch
+AI-Powered by different LLMs
+The Python Quants GmbH | https://tpq.io
+https://hilpisch.com | https://linktr.ee/dyjh
+"""
 from pathlib import Path  # path handling for optional figure export
 
 import math  # elementary math functions

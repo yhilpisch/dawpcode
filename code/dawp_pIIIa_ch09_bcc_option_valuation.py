@@ -1,11 +1,11 @@
-#
-# Bakshi-Cao-Chen (1997): European Call Valuation Building Blocks
-# dawp_pIIIa_ch09_bcc_option_valuation.py
-#
-# (c) Dr. Yves J. Hilpisch
-# Derivatives Analytics with Python
-#
+"""Derivatives Analytics with Python.
 
+Bakshi-Cao-Chen (1997): European Call Valuation Building Blocks.
+(c) Dr. Yves J. Hilpisch
+AI-Powered by different LLMs
+The Python Quants GmbH | https://tpq.io
+https://hilpisch.com | https://linktr.ee/dyjh
+"""
 from __future__ import annotations
 
 import math  # elementary math functions

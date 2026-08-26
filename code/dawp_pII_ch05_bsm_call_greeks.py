@@ -1,11 +1,11 @@
-#
-# Black-Scholes-Merton European Call Greeks
-# dawp_pII_ch05_bsm_call_greeks.py
-#
-# (c) Dr. Yves J. Hilpisch
-# Derivatives Analytics with Python
-#
+"""Derivatives Analytics with Python.
 
+Black-Scholes-Merton European Call Greeks.
+(c) Dr. Yves J. Hilpisch
+AI-Powered by different LLMs
+The Python Quants GmbH | https://tpq.io
+https://hilpisch.com | https://linktr.ee/dyjh
+"""
 import math  # elementary math functions
 
 from scipy import stats  # normal distribution functions
