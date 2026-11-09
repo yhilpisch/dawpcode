@@ -1,0 +1,18 @@
+# Core scientific stack (used throughout code/ and notebooks/)
+numpy>=1.24
+pandas>=2.0
+matplotlib>=3.7
+scipy>=1.10
+
+# Progress bars for Monte Carlo and calibration runs (used in code/)
+tqdm>=4.66
+
+# Interactive + notebook tooling (used by notebooks/)
+ipython>=8.0
+jupyterlab>=4.0
+ipykernel>=6.0
+nbformat>=5.9
+nbclient>=0.10
+
+# LaTeX minted (provides the `pygmentize` executable used by minted)
+Pygments>=2.16
